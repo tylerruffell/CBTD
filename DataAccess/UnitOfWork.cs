@@ -13,7 +13,20 @@ public class UnitOfWork : IUnitOfWork
 
     private IGenericRepository<Category> _Category;
     private IGenericRepository<Manufacturer> _Manufacturer;
+    private IGenericRepository<Product> _Product;
+    public IGenericRepository<Product> Product
+    {
+        get
+        {
 
+            if (_Product == null)
+            {
+                _Product = new GenericRepository<Product>(_dbContext);
+            }
+
+            return _Product;
+        }
+    }
     public IGenericRepository<Category> Category
     {
         get
