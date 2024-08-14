@@ -60,4 +60,3 @@ public class Product
     [ForeignKey("ManufacturerId")]
     public Manufacturer? Manufacturer { get; set; }
 }
-
